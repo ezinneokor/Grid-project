@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: white;
+}
+.undercolor{
+    background-color: rgb(40, 163, 245);
+    width: 100%;
+}
+.container{
+    /* this maxwidth is for desktop mode */
+    max-width: 1200px;
+    /* this margin will centre it on the page */
+    margin: 0,auto;
+    /* give 50px space on top, 20px for left, no space at bottom and 20px right */
+    padding: 50px 20px 0px 20px; 
+    display: grid;
+    /* find out why grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); 
+    didnt work here*/
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows: repeat(minmax(240px, 1fr));
+  row-gap: 10px;
+}
+/* target all the div items using */
+.container > div{
+    display: flex; 
+    /* this changes the items alignment to columns */
+    flex-direction: column;
+    padding: 40px;
+}
+.container h2{
+    color: orangered;
+    text-transform: uppercase;
+    /* since h2 is a separete container on its own, i will use margin bottom
+    to give it a space from the p tag instead of using padding for it */
+    margin-bottom: 5px;
+}
+
+/* to target only the odd items of the div items we use */
+.container > div:nth-child(odd){
+    background-color: #eee;
+}
+
+.container > div:nth-child(even){
+    background-color: #dde2eb;
+}
+
+/* to get the curvywave under the design, use an app called getwave.io. its an 
+svg app that allows u choose any design. just copy the code and paste on ur html
+thjs after selecting the particular wave u want */
